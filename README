@@ -1,0 +1,46 @@
+sfWeather plugin
+==============
+
+This plugin will get to you the weather information from Weather.com
+
+At the first time, you have to register an account to weather.com XML Weather Services (In the account profile).
+Next you will recive an partner ID and an Licence Key (totaly free).
+
+Licence key registration
+---------------------
+1. Create an account on weather.com website
+2. Go to your account setting an subscribe XML Date Feed
+3. You will recive a licence key by email
+
+Registration Link : [https://registration.weather.com/ursa/xmloap/step2](https://registration.weather.com/ursa/xmloap/step2)
+
+How to use
+---------------------
+
+In app.yml
+
+    all:
+      weather:
+        partner: 1039925757         # Your weather.com partner ID
+        licence: 709b14c526eae8ee   # Your weather.com licence key
+
+In your action
+
+    [php]
+    $w = new sfWeather('SZXX0022'); // City code, in the example (Montreux, Switzerland)
+    $w->setUnit('c');               // "c" for celsius or "f" for Fahrenheit
+    $w->setForecast(2);             // The number of the days for the forecast
+
+    $this->weather_data = $w->retrieve();   // Retrive the data from weather.com
+    
+You can show the value with a simple print_r('weather_data')
+
+Example
+---------------------
+
+An example is included in the package
+
+ * Enabled "sfweatherplugin" in "enabled_module" setting in your settings.yml
+ * Just type http://localhost/main_dev.php/sfweatherplugin or http://localhost/main_dev.php/sfweatherplugin/small
+ 
+![weather plugin](http://symfony.swisscenter.com/images/sfWeatherPlugin/weather_exemple.jpg)
