@@ -13,7 +13,7 @@ class sfValidatorWeatherCode extends sfValidatorBase
   protected function doClean($value)
   {
     $w = new sfWeather($value);
-    if(count($w->retrieve())
+    if(count($w->retrieve()))
       {
 	return $value;
       }
