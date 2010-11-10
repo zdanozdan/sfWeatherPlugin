@@ -1,0 +1,63 @@
+#weather
+{
+    
+}
+
+#weather td
+{
+    padding: 5px;
+}
+
+#weather td.temp
+{
+#    background: #930918;
+#    color: #fff;
+    border-top: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: verdana, arial;
+}
+
+#weather td.days
+{
+    background: #919191;
+    color: #fff;
+    font-weight: bold;
+    font-family: verdana, arial;
+}
+
+#weather td.days_icon
+{
+    width: 41px;
+    height: 31px;
+
+    border-top: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+}
+
+#weather td.days_icon_last
+{
+    width: 41px;
+    height: 31px;
+
+    border-top: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+    border-right: 1px solid #DEDEDE;
+}
+
+#weather td.info
+{
+    border-left: 1px solid #DEDEDE;
+    border-right: 1px solid #DEDEDE;
+    border-top: 1px solid #DEDEDE;
+    padding-left: 10px;
+}
+
+#weather td.icon
+{
+    border-top: 1px solid #DEDEDE;
+    border-left: 1px solid #DEDEDE;
+    width: 93px;
+}
