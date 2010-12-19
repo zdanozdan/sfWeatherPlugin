@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext" date="2009-03-10T12:07:49Z">
+    <body>
+      <trans-unit id="1">
+        <source>WEATHER_LOOKUP_FAILED_I18N</source>
+        <target>Weather.com returned no lookup results</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
