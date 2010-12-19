@@ -8,12 +8,9 @@
  */
 class sfWeatherPluginActions extends sfActions
 {
-  public function setPopupMode() {}
-
   public function executeAutocomplete(sfWebRequest $request)
   {
     $w = new sfWeather('');
-    //    $i18n = $this->getContext()->geti18n();
     $message = $this->getContext()->geti18n()->__('WEATHER_LOOKUP_FAILED_I18N');
     return $this->renderText(json_encode($w->lookupName($request->getParameter('q'),$message)));
   }
