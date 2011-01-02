@@ -131,7 +131,7 @@ class sfWeather
 	  }
 
 	$xmlContentArray = $xml->parse($b->getResponseText());
-     
+
 	if(count($xmlContentArray) == 0) 
 	  {
 	    $this->hasError = true;
@@ -143,6 +143,7 @@ class sfWeather
 	  {
 	    $xmlContentArray = $xmlContentArray['weather'];
 	  }
+
 	else if(isset($xmlContentArray['error']))
 	  {
 	    $xmlContentArray = $xmlContentArray['error'];
@@ -153,16 +154,19 @@ class sfWeather
    
 	$xmlContentArray = $this->array_remove_key($xmlContentArray, 'lnks');
      
-	$cache->set('sfWeatherPlugin_'.$this->cityCode, serialize($xmlContentArray), 900); // 15 minutes of cache
+	if($this->hasError == false)
+	  $cache->set('sfWeatherPlugin_'.$this->cityCode, serialize($xmlContentArray), 900); // 15 minutes of cache
      
 	return $xmlContentArray;
       }
     else
       {
+	//$xmlContentArray = unserialize($cache->get('sfWeatherPlugin_'.$this->cityCode));
+
 	return unserialize($cache->get('sfWeatherPlugin_'.$this->cityCode));
       }   
   }
- 
+
   protected function array_remove_key($array, $key)
   {
     $output = array();
