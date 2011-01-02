@@ -2,7 +2,7 @@
 
 class sfValidatorWeatherCode extends sfValidatorBase
 {
-  const CITY_CODE_REGEX = '/[a-zA-Z0-9]+/';
+  const CITY_CODE_REGEX = '/[a-zA-Z0-9:]+/';
 
   protected function configure($options = array(), $messages = array())
   {
